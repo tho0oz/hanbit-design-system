@@ -1,0 +1,70 @@
+# Hanbit Design System — Cursor AI Rules
+
+You are working in the Hanbit Design System codebase. Follow these rules:
+
+## Core Principles
+
+1. **Use semantic tokens, never raw colors.** Always reference `var(--semantic-*)` from `tokens/semantic.css`. Never hardcode hex values like `#3182F6` — use `var(--semantic-primary-normal)` instead.
+
+2. **Use existing components.** Before creating any UI element, check `components/index.ts` for an existing component. There are 73 components covering forms, feedback, data display, overlays, navigation, layout, pickers, and more.
+
+3. **Korean labels.** All user-facing ARIA labels and placeholder text must be in Korean (e.g., `aria-label="검색"`, `placeholder="텍스트를 입력해 주세요."`).
+
+4. **data-* styling pattern.** Components expose state via `data-*` attributes. Style with CSS attribute selectors: `[data-variant="primary"]`, `[data-size="small"]`, `[data-active="true"]`.
+
+5. **Platform-aware.** Many components accept `platform: 'iOS' | 'Android' | 'Web'`. Use platform-specific variants when building cross-platform UIs.
+
+## Import Convention
+
+```tsx
+// Always import from the barrel
+import { Button, TextField, Modal } from './components';
+// Types too
+import type { ButtonProps, ButtonSize } from './components';
+```
+
+## Token Usage
+
+```css
+/* Colors — always semantic */
+color: var(--semantic-label-normal);           /* text */
+background: var(--semantic-bg-normal);         /* background */
+border-color: var(--semantic-line-normal);     /* borders */
+
+/* Status */
+color: var(--semantic-status-positive);        /* success/green */
+color: var(--semantic-status-negative);        /* error/red */
+color: var(--semantic-status-cautionary);      /* warning/orange */
+
+/* Typography */
+font-family: var(--font-family);               /* Pretendard */
+font-size: var(--font-size-body1);             /* 16px */
+```
+
+## Component Patterns
+
+- Button variants: `Solid | Outlined | Ghost` with sizes `XSmall | Small | Medium | Large | XLarge`
+- Form status: `Normal | Positive | Negative` (TextField, Textarea)
+- Platform: `iOS | Android | Web` (TopNavigation, BottomNavigation, Alert, SafeArea, etc.)
+- Breakpoint: `Desktop | Tablet | Mobile` (GNB, Footer)
+- `forwardRef` for all button-family components
+- Export pattern: component + Props interface + union types
+
+## Accessibility Checklist
+
+- Add `role` attributes (tab, menu, dialog, progressbar, etc.)
+- Include `aria-selected`, `aria-expanded`, `aria-disabled` state attributes
+- All interactive elements need `aria-label` in Korean
+- Use `role="alert"` or `aria-live="polite"` for notifications
+- Support keyboard navigation with `tabIndex` and key handlers
+
+## File Structure
+
+- New form components → `components/form/`
+- New feedback components → `components/feedback/`
+- New data display → `components/data-display/`
+- New overlays → `components/overlay/`
+- New navigation → `components/navigation/`
+- New layout → `components/layout/`
+- New utilities → `components/element/`
+- Always update `components/index.ts` barrel exports
