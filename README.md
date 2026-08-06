@@ -9,11 +9,98 @@ Figma 디자인 시스템에서 자동 추출된 React 컴포넌트 라이브러
 
 ---
 
+## AI 도구 연동
+
+이 레포는 주요 AI 코딩 도구와 연동되어, UI 개발 시 Hanbit 디자인 시스템의 컴포넌트·토큰·패턴을 자동으로 참조합니다.
+
+### 지원 도구
+
+| AI 도구 | 자동 로드 | 슬래시 호출 | 참조 파일 |
+|---------|----------|------------|----------|
+| **Claude Code** | ✅ 레포 열면 자동 | ✅ `/hanbit-design` | `CLAUDE.md` + `.claude/commands/` |
+| **OpenAI Codex** | ✅ 레포 열면 자동 | ✅ `/hanbit-design` | `AGENTS.md` + `.codex/commands/` |
+| **Cursor** | ✅ 레포 열면 자동 | — | `.cursorrules` |
+| **GitHub Copilot** | ✅ 레포 열면 자동 | — | `.github/copilot-instructions.md` |
+
+### 사용 방법
+
+#### 방법 1: 레포 열기 (자동 로드)
+
+레포를 클론하거나 작업 디렉토리로 열면, 각 AI 도구가 자동으로 디자인 시스템 컨텍스트를 로드합니다.
+
+```bash
+git clone https://github.com/tho0oz/hanbit-design-system.git
+cd hanbit-design-system
+# 이후 Claude Code, Codex, Cursor 등을 열면 자동 인식
+```
+
+#### 방법 2: 슬래시 명령으로 호출
+
+Claude Code 또는 Codex 세션에서 슬래시 명령으로 명시적으로 호출할 수 있습니다:
+
+```
+/hanbit-design
+```
+
+이 명령을 입력하면 디자인 시스템의 핵심 규칙, 토큰, 컴포넌트 카탈로그가 컨텍스트에 로드됩니다.
+
+#### 방법 3: 글로벌 설치 (Claude Code 전용)
+
+레포를 열지 않아도 어떤 프로젝트에서든 Hanbit DS를 참조하려면:
+
+```bash
+git clone https://github.com/tho0oz/hanbit-design-system.git
+cd hanbit-design-system
+chmod +x install.sh
+./install.sh
+```
+
+설치 스크립트가 `~/.claude/skills/hanbit-design/`에 스킬을 배포합니다. 기존 설치가 있으면 자동 백업(`hanbit-design.bak.<timestamp>`)합니다.
+
+**설치 확인:**
+```bash
+ls ~/.claude/skills/hanbit-design/
+# SKILL.md  references/
+```
+
+**업데이트:**
+```bash
+cd hanbit-design-system
+git pull
+./install.sh
+```
+
+### AI 도구 연동 파일 구조
+
+```
+hanbit-design-system/
+├── CLAUDE.md                          # Claude Code 자동 로드
+├── AGENTS.md                          # Codex 자동 로드
+├── .cursorrules                       # Cursor 자동 로드
+├── .claude/
+│   └── commands/
+│       └── hanbit-design.md           # /hanbit-design 슬래시 명령 (Claude Code)
+├── .codex/
+│   └── commands/
+│       └── hanbit-design.md           # /hanbit-design 슬래시 명령 (Codex)
+├── .github/
+│   └── copilot-instructions.md        # GitHub Copilot 자동 로드
+├── skill/
+│   ├── SKILL.md                       # 글로벌 스킬 정의 (install.sh로 배포)
+│   └── references/
+│       ├── components.md              # 73개 컴포넌트 API 레퍼런스
+│       ├── tokens.md                  # 디자인 토큰 전체 목록
+│       └── patterns.md                # 공통 UI 패턴 & 레시피
+└── install.sh                         # 글로벌 설치 스크립트 (Claude Code 전용)
+```
+
+---
+
 ## 개요
 
 | 항목 | 내용 |
 |------|------|
-| **소스** | Figma "Hanbit Design System" (`usRZn9VKhXQ9MedDWw1u57`) |
+| **소스** | Figma “Hanbit Design System” (`usRZn9VKhXQ9MedDWw1u57`) |
 | **컴포넌트** | 73개 React TSX (Figma variants → TypeScript union types) |
 | **토큰** | CSS Custom Properties + W3C Design Token JSON |
 | **폰트** | Pretendard (15 type scales) |
@@ -36,73 +123,17 @@ hanbit-design-system/
 │   ├── index.ts            # Barrel exports (전체)
 │   ├── Button.tsx          # 기본 컴포넌트
 │   ├── TextField.tsx
-│   ├── Checkbox.tsx
 │   ├── ...
 │   ├── form/               # 폼 컨트롤
-│   │   ├── Textarea.tsx
-│   │   ├── Searchfield.tsx
-│   │   ├── CheckMark.tsx
-│   │   └── Slider.tsx
 │   ├── feedback/           # 피드백
-│   │   ├── Snackbar.tsx
-│   │   ├── TooltipCompact.tsx
-│   │   ├── TooltipExtended.tsx
-│   │   ├── Alert.tsx
-│   │   ├── ProgressIndicator.tsx
-│   │   └── Circular.tsx
 │   ├── data-display/       # 데이터 표시
-│   │   ├── Skeleton.tsx
-│   │   ├── EmptyState.tsx
-│   │   ├── PushBadge.tsx
-│   │   ├── ContentBadge.tsx
-│   │   ├── PlayIconBadge.tsx
-│   │   ├── Thumbnail.tsx
-│   │   ├── Avatar.tsx
-│   │   └── Table.tsx
 │   ├── overlay/            # 오버레이
-│   │   ├── AutoComplete.tsx
-│   │   ├── ActionSheet.tsx
-│   │   ├── DatePickerWeb.tsx
-│   │   └── TimePickerWeb.tsx
 │   ├── navigation/         # 내비게이션
-│   │   ├── TopNavigation.tsx
-│   │   ├── BottomNavigation.tsx
-│   │   ├── SideNavigation.tsx
-│   │   ├── GNB.tsx
-│   │   ├── Footer.tsx
-│   │   ├── Tab.tsx
-│   │   ├── Pagination.tsx
-│   │   ├── Category.tsx
-│   │   └── Menu.tsx
 │   ├── layout/             # 레이아웃
-│   │   ├── Cell.tsx
-│   │   ├── Accordion.tsx
-│   │   ├── SectionHeader.tsx
-│   │   ├── Card.tsx
-│   │   ├── Divider.tsx
-│   │   ├── ActionArea.tsx
-│   │   └── ScrollBar.tsx
 │   ├── element/            # 유틸리티/엘리먼트
-│   │   ├── Gradient.tsx
-│   │   ├── Interaction.tsx
-│   │   ├── SafeArea.tsx
-│   │   ├── AspectRatio.tsx
-│   │   ├── Keyboard.tsx
-│   │   ├── IconWrapper.tsx
-│   │   └── TextEditor.tsx
 │   ├── picker/             # 플랫폼별 피커
-│   │   ├── DatePickerAndroid.tsx
-│   │   ├── DatePickerIOS.tsx
-│   │   ├── TimePickerAndroid.tsx
-│   │   └── TimePickerIOS.tsx
 │   ├── viewer/             # LMS 뷰어
-│   │   ├── ViewerSideNavi.tsx
-│   │   ├── ViewerBotNavi.tsx
-│   │   ├── ViewerDrawToolbar.tsx
-│   │   └── VideoPlayer.tsx
 │   └── dashboard/          # 대시보드
-│       ├── DashboardSideNavi.tsx
-│       └── DashboardTopNavi.tsx
 └── docs/
     └── design-system-spec.md   # 전체 스펙 문서
 ```
@@ -380,40 +411,13 @@ import {
   <h2>확인</h2>
   <p>변경사항을 저장하시겠습니까?</p>
 </Modal>
-
-// Avatar Group
-<AvatarGroup
-  avatars={[
-    { src: '/user1.jpg', alt: '김철수' },
-    { src: '/user2.jpg', alt: '이영희' },
-    { src: '/user3.jpg', alt: '박지수' },
-  ]}
-  max={3}
-  size="Small"
-/>
-
-// Tab Navigation
-<Tab
-  items={[
-    { key: 'all', label: '전체' },
-    { key: 'ongoing', label: '진행중' },
-    { key: 'done', label: '완료' },
-  ]}
-  activeKey={activeTab}
-  size="Medium"
-  resize="Fill"
-  onChange={setActiveTab}
-/>
 ```
 
 ### 플랫폼별 분기
 
 ```tsx
-import { DatePickerIOS } from './components';
-import { DatePickerAndroid } from './components';
-import { DatePickerWeb } from './components';
+import { DatePickerIOS, DatePickerAndroid, DatePickerWeb } from './components';
 
-// 플랫폼에 따라 적합한 Picker 사용
 const DatePicker = platform === 'ios'
   ? <DatePickerIOS type="Calendar" onChange={handleDate} />
   : platform === 'android'
@@ -440,7 +444,6 @@ const DatePicker = platform === 'ios'
 모든 컴포넌트는 `data-*` 속성으로 상태를 노출합니다:
 
 ```css
-/* 외부 CSS에서 스타일링 */
 [data-variant="primary"] { background: var(--semantic-primary-normal); }
 [data-size="small"] { padding: 4px 8px; }
 [data-active="true"] { font-weight: 600; }
