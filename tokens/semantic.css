@@ -1,0 +1,74 @@
+/* ============================================
+   Hanbit Design System - Semantic Color Tokens
+   References Atomic tokens from colors.css
+   ============================================ */
+
+:root {
+  /* ── Primary ── */
+  --semantic-primary-normal: var(--color-emerald-50);    /* #03aea0 */
+  --semantic-primary-strong: var(--color-emerald-55);    /* #009e91 */
+  --semantic-primary-heavy: var(--color-emerald-60);     /* #028b80 */
+
+  /* ── Label ── */
+  --semantic-label-normal: var(--color-cool-neutral-95); /* #030712 */
+  --semantic-label-strong: var(--color-common-100);      /* #000000 */
+  --semantic-label-neutral: rgba(30, 41, 57, 0.88);
+  --semantic-label-alternative: rgba(62, 74, 92, 0.61);
+  --semantic-label-assistive: rgba(62, 74, 92, 0.28);
+  --semantic-label-disable: rgba(62, 74, 92, 0.16);
+
+  /* ── Background ── */
+  --semantic-bg-normal: var(--color-common-0);
+  --semantic-bg-alternative: var(--color-cool-neutral-10);
+  --semantic-bg-elevated-normal: var(--color-common-0);
+  --semantic-bg-elevated-alt: var(--color-cool-neutral-30);
+
+  /* ── Interaction ── */
+  --semantic-interaction-inactive: var(--color-cool-neutral-35);
+  --semantic-interaction-disable: var(--color-cool-neutral-5);
+
+  /* ── Line ── */
+  --semantic-line-normal: rgba(92, 102, 118, 0.22);
+  --semantic-line-neutral: rgba(92, 102, 118, 0.16);
+  --semantic-line-alternative: rgba(92, 102, 118, 0.08);
+
+  /* ── Fill ── */
+  --semantic-fill-normal: rgba(92, 102, 118, 0.08);
+  --semantic-fill-strong: rgba(92, 102, 118, 0.16);
+  --semantic-fill-alternative: rgba(92, 102, 118, 0.05);
+
+  /* ── Status ── */
+  --semantic-status-positive: var(--color-green-50);   /* #00c950 */
+  --semantic-status-cautionary: var(--color-orange-50); /* #ff6900 */
+  --semantic-status-negative: var(--color-red-50);      /* #fb2c36 */
+
+  /* ── Static ── */
+  --semantic-static-white: var(--color-common-0);
+  --semantic-static-black: var(--color-common-100);
+
+  /* ── Accent Background ── */
+  --semantic-accent-bg-orange: var(--color-orange-40);
+  --semantic-accent-bg-lime: var(--color-lime-40);
+  --semantic-accent-bg-cyan: var(--color-cyan-40);
+  --semantic-accent-bg-sky: var(--color-sky-40);
+  --semantic-accent-bg-blue: var(--color-blue-40);
+  --semantic-accent-bg-purple: var(--color-purple-40);
+  --semantic-accent-bg-pink: var(--color-pink-40);
+
+  /* ── Accent Foreground ── */
+  --semantic-accent-fg-orange: var(--color-orange-60);
+  --semantic-accent-fg-lime: var(--color-lime-60);
+  --semantic-accent-fg-cyan: var(--color-cyan-60);
+  --semantic-accent-fg-sky: var(--color-sky-60);
+  --semantic-accent-fg-blue: var(--color-blue-60);
+  --semantic-accent-fg-purple: var(--color-purple-60);
+  --semantic-accent-fg-pink: var(--color-pink-60);
+
+  /* ── Material ── */
+  --semantic-material-dimmer: rgba(3, 7, 18, 0.52);
+
+  /* ── Inverse ── */
+  --semantic-inverse-primary: var(--color-emerald-50);
+  --semantic-inverse-background: var(--color-cool-neutral-95);
+  --semantic-inverse-label: var(--color-cool-neutral-10);
+}

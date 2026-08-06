@@ -1,0 +1,97 @@
+/* ============================================
+   Hanbit Design System - Typography Tokens
+   Font: Pretendard
+   ============================================ */
+
+:root {
+  --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-display1: 56px;
+  --font-size-display2: 40px;
+  --font-size-title1: 36px;
+  --font-size-title2: 28px;
+  --font-size-title3: 24px;
+  --font-size-h1: 22px;
+  --font-size-h2: 20px;
+  --font-size-h3: 18px;
+  --font-size-h4: 17px;
+  --font-size-body1: 16px;
+  --font-size-body2: 15px;
+  --font-size-label1: 14px;
+  --font-size-label2: 13px;
+  --font-size-caption1: 12px;
+  --font-size-caption2: 11px;
+
+  --lh-display1: 128.6%;  --ls-display1: -0.0319em;
+  --lh-display2: 130%;    --ls-display2: -0.0282em;
+  --lh-title1: 133.4%;    --ls-title1: -0.027em;
+  --lh-title2: 135.8%;    --ls-title2: -0.0236em;
+  --lh-title3: 133.4%;    --ls-title3: -0.023em;
+  --lh-h1: 136.4%;        --ls-h1: -0.0194em;
+  --lh-h2: 140%;          --ls-h2: -0.012em;
+  --lh-h3: 144.5%;        --ls-h3: -0.0002em;
+  --lh-h4: 141.2%;        --ls-h4: 0;
+  --lh-body1: 150%;       --lh-body1-reading: 162.5%; --ls-body1: 0.0057em;
+  --lh-body2: 146.7%;     --lh-body2-reading: 160%;   --ls-body2: 0.0096em;
+  --lh-label1: 142.9%;    --lh-label1-reading: 157.1%; --ls-label1: 0.0145em;
+  --lh-label2: 138.5%;    --ls-label2: 0.0194em;
+  --lh-caption1: 133.4%;  --ls-caption1: 0.0252em;
+  --lh-caption2: 127.3%;  --ls-caption2: 0.0311em;
+}
+
+/* ── Utility Classes ── */
+.text-display1-bold    { font: var(--font-weight-bold) var(--font-size-display1)/var(--lh-display1) var(--font-family); letter-spacing: var(--ls-display1); }
+.text-display1-medium  { font: var(--font-weight-medium) var(--font-size-display1)/var(--lh-display1) var(--font-family); letter-spacing: var(--ls-display1); }
+.text-display1-regular { font: var(--font-weight-regular) var(--font-size-display1)/var(--lh-display1) var(--font-family); letter-spacing: var(--ls-display1); }
+.text-display2-bold    { font: var(--font-weight-bold) var(--font-size-display2)/var(--lh-display2) var(--font-family); letter-spacing: var(--ls-display2); }
+.text-display2-medium  { font: var(--font-weight-medium) var(--font-size-display2)/var(--lh-display2) var(--font-family); letter-spacing: var(--ls-display2); }
+.text-display2-regular { font: var(--font-weight-regular) var(--font-size-display2)/var(--lh-display2) var(--font-family); letter-spacing: var(--ls-display2); }
+.text-title1-bold      { font: var(--font-weight-bold) var(--font-size-title1)/var(--lh-title1) var(--font-family); letter-spacing: var(--ls-title1); }
+.text-title1-medium    { font: var(--font-weight-medium) var(--font-size-title1)/var(--lh-title1) var(--font-family); letter-spacing: var(--ls-title1); }
+.text-title1-regular   { font: var(--font-weight-regular) var(--font-size-title1)/var(--lh-title1) var(--font-family); letter-spacing: var(--ls-title1); }
+.text-title2-bold      { font: var(--font-weight-bold) var(--font-size-title2)/var(--lh-title2) var(--font-family); letter-spacing: var(--ls-title2); }
+.text-title2-medium    { font: var(--font-weight-medium) var(--font-size-title2)/var(--lh-title2) var(--font-family); letter-spacing: var(--ls-title2); }
+.text-title2-regular   { font: var(--font-weight-regular) var(--font-size-title2)/var(--lh-title2) var(--font-family); letter-spacing: var(--ls-title2); }
+.text-title3-bold      { font: var(--font-weight-bold) var(--font-size-title3)/var(--lh-title3) var(--font-family); letter-spacing: var(--ls-title3); }
+.text-title3-medium    { font: var(--font-weight-medium) var(--font-size-title3)/var(--lh-title3) var(--font-family); letter-spacing: var(--ls-title3); }
+.text-title3-regular   { font: var(--font-weight-regular) var(--font-size-title3)/var(--lh-title3) var(--font-family); letter-spacing: var(--ls-title3); }
+.text-h1-bold          { font: var(--font-weight-semibold) var(--font-size-h1)/var(--lh-h1) var(--font-family); letter-spacing: var(--ls-h1); }
+.text-h1-medium        { font: var(--font-weight-medium) var(--font-size-h1)/var(--lh-h1) var(--font-family); letter-spacing: var(--ls-h1); }
+.text-h1-regular       { font: var(--font-weight-regular) var(--font-size-h1)/var(--lh-h1) var(--font-family); letter-spacing: var(--ls-h1); }
+.text-h2-bold          { font: var(--font-weight-semibold) var(--font-size-h2)/var(--lh-h2) var(--font-family); letter-spacing: var(--ls-h2); }
+.text-h2-medium        { font: var(--font-weight-medium) var(--font-size-h2)/var(--lh-h2) var(--font-family); letter-spacing: var(--ls-h2); }
+.text-h2-regular       { font: var(--font-weight-regular) var(--font-size-h2)/var(--lh-h2) var(--font-family); letter-spacing: var(--ls-h2); }
+.text-h3-bold          { font: var(--font-weight-semibold) var(--font-size-h3)/var(--lh-h3) var(--font-family); letter-spacing: var(--ls-h3); }
+.text-h3-medium        { font: var(--font-weight-medium) var(--font-size-h3)/var(--lh-h3) var(--font-family); letter-spacing: var(--ls-h3); }
+.text-h3-regular       { font: var(--font-weight-regular) var(--font-size-h3)/var(--lh-h3) var(--font-family); letter-spacing: var(--ls-h3); }
+.text-h4-bold          { font: var(--font-weight-semibold) var(--font-size-h4)/var(--lh-h4) var(--font-family); letter-spacing: var(--ls-h4); }
+.text-h4-medium        { font: var(--font-weight-medium) var(--font-size-h4)/var(--lh-h4) var(--font-family); letter-spacing: var(--ls-h4); }
+.text-h4-regular       { font: var(--font-weight-regular) var(--font-size-h4)/var(--lh-h4) var(--font-family); letter-spacing: var(--ls-h4); }
+.text-body1-regular    { font: var(--font-weight-regular) var(--font-size-body1)/var(--lh-body1) var(--font-family); letter-spacing: var(--ls-body1); }
+.text-body1-medium     { font: var(--font-weight-medium) var(--font-size-body1)/var(--lh-body1) var(--font-family); letter-spacing: var(--ls-body1); }
+.text-body1-bold       { font: var(--font-weight-semibold) var(--font-size-body1)/var(--lh-body1) var(--font-family); letter-spacing: var(--ls-body1); }
+.text-body1-reading-regular { font: var(--font-weight-regular) var(--font-size-body1)/var(--lh-body1-reading) var(--font-family); letter-spacing: var(--ls-body1); }
+.text-body1-reading-medium  { font: var(--font-weight-medium) var(--font-size-body1)/var(--lh-body1-reading) var(--font-family); letter-spacing: var(--ls-body1); }
+.text-body1-reading-bold    { font: var(--font-weight-semibold) var(--font-size-body1)/var(--lh-body1-reading) var(--font-family); letter-spacing: var(--ls-body1); }
+.text-body2-regular    { font: var(--font-weight-regular) var(--font-size-body2)/var(--lh-body2) var(--font-family); letter-spacing: var(--ls-body2); }
+.text-body2-medium     { font: var(--font-weight-medium) var(--font-size-body2)/var(--lh-body2) var(--font-family); letter-spacing: var(--ls-body2); }
+.text-body2-bold       { font: var(--font-weight-semibold) var(--font-size-body2)/var(--lh-body2) var(--font-family); letter-spacing: var(--ls-body2); }
+.text-body2-reading-regular { font: var(--font-weight-regular) var(--font-size-body2)/var(--lh-body2-reading) var(--font-family); letter-spacing: var(--ls-body2); }
+.text-body2-reading-medium  { font: var(--font-weight-medium) var(--font-size-body2)/var(--lh-body2-reading) var(--font-family); letter-spacing: var(--ls-body2); }
+.text-body2-reading-bold    { font: var(--font-weight-semibold) var(--font-size-body2)/var(--lh-body2-reading) var(--font-family); letter-spacing: var(--ls-body2); }
+.text-label1-regular   { font: var(--font-weight-regular) var(--font-size-label1)/var(--lh-label1) var(--font-family); letter-spacing: var(--ls-label1); }
+.text-label1-medium    { font: var(--font-weight-medium) var(--font-size-label1)/var(--lh-label1) var(--font-family); letter-spacing: var(--ls-label1); }
+.text-label1-bold      { font: var(--font-weight-semibold) var(--font-size-label1)/var(--lh-label1) var(--font-family); letter-spacing: var(--ls-label1); }
+.text-label2-regular   { font: var(--font-weight-regular) var(--font-size-label2)/var(--lh-label2) var(--font-family); letter-spacing: var(--ls-label2); }
+.text-label2-medium    { font: var(--font-weight-medium) var(--font-size-label2)/var(--lh-label2) var(--font-family); letter-spacing: var(--ls-label2); }
+.text-label2-bold      { font: var(--font-weight-semibold) var(--font-size-label2)/var(--lh-label2) var(--font-family); letter-spacing: var(--ls-label2); }
+.text-caption1-regular { font: var(--font-weight-regular) var(--font-size-caption1)/var(--lh-caption1) var(--font-family); letter-spacing: var(--ls-caption1); }
+.text-caption1-medium  { font: var(--font-weight-medium) var(--font-size-caption1)/var(--lh-caption1) var(--font-family); letter-spacing: var(--ls-caption1); }
+.text-caption1-bold    { font: var(--font-weight-semibold) var(--font-size-caption1)/var(--lh-caption1) var(--font-family); letter-spacing: var(--ls-caption1); }
+.text-caption2-regular { font: var(--font-weight-regular) var(--font-size-caption2)/var(--lh-caption2) var(--font-family); letter-spacing: var(--ls-caption2); }
+.text-caption2-medium  { font: var(--font-weight-medium) var(--font-size-caption2)/var(--lh-caption2) var(--font-family); letter-spacing: var(--ls-caption2); }
+.text-caption2-bold    { font: var(--font-weight-semibold) var(--font-size-caption2)/var(--lh-caption2) var(--font-family); letter-spacing: var(--ls-caption2); }

@@ -1,0 +1,39 @@
+/* ============================================
+   Hanbit Design System - Spacing & Layout Tokens
+   ============================================ */
+
+:root {
+  --viewport-lg: 1100px;
+  --viewport-xl: 1440px;
+  --margin-platform: 20px;
+
+  /* ── Modal Sizes ── */
+  --modal-sm-radius: 12px;  --modal-sm-width: 360px;
+  --modal-md-radius: 12px;  --modal-md-width: 400px;
+  --modal-lg-radius: 20px;  --modal-lg-width: 480px;
+  --modal-xl-radius: 20px;  --modal-xl-width: 560px;
+  --modal-width-max: 1060px;
+  --modal-width-min: 320px;
+  --modal-height-popup-max: 760px;
+
+  /* ── Modal Spacing (Small) ── */
+  --modal-sm-nav: 16px;  --modal-sm-action-h: 16px;
+  --modal-sm-action-v: 16px;  --modal-sm-content: 20px;
+  /* ── Modal Spacing (Medium) ── */
+  --modal-md-nav: 20px;  --modal-md-action-h: 20px;
+  --modal-md-action-v: 20px;  --modal-md-content: 20px;
+  /* ── Modal Spacing (Large) ── */
+  --modal-lg-nav: 20px;  --modal-lg-action-h: 24px;
+  --modal-lg-action-v: 24px;  --modal-lg-content: 24px;
+  /* ── Modal Spacing (XLarge) ── */
+  --modal-xl-nav: 24px;  --modal-xl-action-h: 32px;
+  --modal-xl-action-v: 24px;  --modal-xl-content: 32px;
+}
+
+/* Responsive Component Gap */
+@media (max-width: 767px) {
+  :root { --space-gap-normal: 16px; --padding-card-tiny: 4px; }
+}
+@media (min-width: 768px) {
+  :root { --space-gap-normal: 20px; --padding-card-tiny: 6px; }
+}
